@@ -13,4 +13,5 @@
     <color name="btn_single_mode_fill">#F3501D</color>
     <color name="btn_multi_mode_corner">#EB00FF</color>
     <color name="btn_multi_mode_fill">#7213EB</color>
+    <color name="player_wins_button_color">#FFE03B</color>
 </resources>
