@@ -14,4 +14,6 @@
     <color name="btn_multi_mode_corner">#EB00FF</color>
     <color name="btn_multi_mode_fill">#7213EB</color>
     <color name="player_wins_button_color">#FFE03B</color>
+    <color name="you_lose">#FF3B3B</color>
+    <color name="draw">#7BB1EF</color>
 </resources>
