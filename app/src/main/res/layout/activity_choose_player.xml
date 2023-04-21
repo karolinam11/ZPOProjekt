@@ -77,18 +77,33 @@
             app:layout_constraintVertical_bias="0.746" />
 
     <androidx.appcompat.widget.AppCompatButton
-            android:text="Trudny"
-            android:layout_width="167dp"
-            android:layout_height="64dp"
-            android:id="@+id/button_hard_level"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:background="@drawable/btn_purple_with_pink_corner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.884" />
+        android:id="@+id/button_hard_level"
+        android:layout_width="167dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_purple_with_pink_corner"
+        android:text="Średni"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.859" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_hard_level2"
+        android:layout_width="167dp"
+        android:layout_height="64dp"
+        android:background="@drawable/btn_purple_with_pink_corner"
+        android:text="Trudny"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
