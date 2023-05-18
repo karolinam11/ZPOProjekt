@@ -1,5 +1,6 @@
 package com.example.maligiganci
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,7 +8,7 @@ import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import com.example.maligiganci.databinding.ActivityGameTicTacToeBinding
 
-class GameTicTacToe : AppCompatActivity() {
+class GameTicTacToeTwoPlayers : AppCompatActivity() {
 
     enum class Turn{
         NOUGHT,
@@ -28,6 +29,12 @@ class GameTicTacToe : AppCompatActivity() {
         binding = ActivityGameTicTacToeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initBoard()
+
+        val button = findViewById<View>(R.id.button_go_back)
+        button.setOnClickListener {
+            val intent = Intent(this, ChooseMode::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initBoard(){
@@ -50,15 +57,15 @@ class GameTicTacToe : AppCompatActivity() {
         if (checkForVicotry(NOUGHT))
         {
             noughtsScore++
-            result("Noughts Win!")
+            result("Kółko wygrywa!")
         }
         if (checkForVicotry(CROSS))
         {
             crossesScore++
-            result("Crosses Win!")
+            result("Krzyżyk wygrywa!")
         }
         if (fullBoard()){
-            result("Draw")
+            result("Remis")
             
         }
     }
@@ -90,11 +97,11 @@ class GameTicTacToe : AppCompatActivity() {
 
     private fun match(button: Button, symbol : String): Boolean = button.text == symbol
     private fun result(title: String) {
-        val message = "\nNoughts $noughtsScore\n\nCrosses $crossesScore"
+        val message = "\nKółko $noughtsScore\n\nKrzyżyk $crossesScore"
         AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
-            .setPositiveButton("Reset"){
+            .setPositiveButton("Zagraj ponownie"){
                 _,_ ->
                 resetBoard()
             }
@@ -141,9 +148,9 @@ class GameTicTacToe : AppCompatActivity() {
     private fun setTurnLabel() {
         var turnText = ""
         if (currentTurn == Turn.CROSS)
-            turnText = "Turn $CROSS"
+            turnText = "Kolej $CROSS"
         else if (currentTurn == Turn.NOUGHT)
-            turnText = "Turn $CROSS"
+            turnText = "Kolej $NOUGHT"
 
         binding.turnTV.text = turnText
 

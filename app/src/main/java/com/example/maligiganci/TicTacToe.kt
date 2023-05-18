@@ -12,9 +12,9 @@ class TicTacToe : AppCompatActivity() {
         setContentView(R.layout.activity_tic_tac_toe)
         Log.d("TAG", "GameTicTacToe onCreate called")
 
-        val button = findViewById<View>(R.id.button_play1)
+        val button = findViewById<View>(R.id.buttonPlay)
         button.setOnClickListener {
-            val intent = Intent(this@TicTacToe, GameTicTacToe::class.java)
+            val intent = Intent(this, ChooseMode::class.java)
             startActivity(intent)
         }
     }
