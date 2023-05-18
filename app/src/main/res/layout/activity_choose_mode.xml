@@ -8,8 +8,8 @@
         tools:context=".ChooseMode">
 
 
-    <TextView
-            android:id="@+id/myRectangle2"
+    <ImageButton
+            android:id="@+id/ButtonTwoPlayers"
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
@@ -76,8 +76,8 @@
             app:layout_constraintVertical_bias="0.902"
             app:srcCompat="@drawable/joystick" />
 
-    <TextView
-            android:id="@+id/myRectangle"
+    <ImageButton
+            android:id="@+id/ButtonOnePlayer"
             android:layout_width="250dp"
             android:layout_height="100dp"
             android:layout_alignParentEnd="true"
@@ -115,6 +115,32 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.368" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:text="JEDEN GRACZ"
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ButtonOnePlayer"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonOnePlayer"
+        app:layout_constraintStart_toStartOf="@+id/ButtonOnePlayer"
+        app:layout_constraintTop_toTopOf="@+id/ButtonOnePlayer" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DWÓCH GRACZY"
+        android:textColor="@color/white"
+        android:textSize="23dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ButtonTwoPlayers"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonTwoPlayers"
+        app:layout_constraintStart_toStartOf="@+id/ButtonTwoPlayers"
+        app:layout_constraintTop_toTopOf="@+id/ButtonTwoPlayers" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

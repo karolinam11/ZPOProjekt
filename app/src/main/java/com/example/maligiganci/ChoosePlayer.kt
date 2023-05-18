@@ -15,5 +15,15 @@ class ChoosePlayer : AppCompatActivity() {
             val intent = Intent(this, GameTicTacToeEasy::class.java)
             startActivity(intent)
         }
+        val button2 = findViewById<View>(R.id.button_medium_level)
+        button2.setOnClickListener {
+            val intent = Intent(this, GameTicTacToeMedium::class.java)
+            startActivity(intent)
+        }
+        val button3 = findViewById<View>(R.id.button_hard_level)
+        button3.setOnClickListener {
+            val intent = Intent(this, GameTicTacToeHard::class.java)
+            startActivity(intent)
+        }
     }
 }

@@ -20,5 +20,15 @@ class ChooseMode : AppCompatActivity() {
             val intent = Intent(this, GameTicTacToeTwoPlayers::class.java)
             startActivity(intent)
         }
+        val button3 = findViewById<View>(R.id.ButtonOnePlayer)
+        button3.setOnClickListener {
+            val intent = Intent(this, ChoosePlayer::class.java)
+            startActivity(intent)
+        }
+        val button4 = findViewById<View>(R.id.ButtonTwoPlayers)
+        button4.setOnClickListener {
+            val intent = Intent(this, GameTicTacToeTwoPlayers::class.java)
+            startActivity(intent)
+        }
     }
 }
