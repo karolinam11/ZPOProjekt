@@ -14,7 +14,7 @@ class Memory : AppCompatActivity() {
 
     val button = findViewById<View>(R.id.button_play)
     button.setOnClickListener {
-        val intent = Intent(this@Memory, ChooseMode::class.java)
+        val intent = Intent(this@Memory, MemoryGame::class.java)
         startActivity(intent) }
     }
 }

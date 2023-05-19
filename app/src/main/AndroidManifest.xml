@@ -12,16 +12,20 @@
         android:theme="@style/Theme.MaliGiganci"
         tools:targetApi="31">
         <activity
+            android:name=".ChooseModeMemory"
+            android:exported="false" />
+        <activity
+            android:name=".MemoryGame"
+            android:exported="false" />
+        <activity
             android:name=".GameTicTacToeHard"
             android:exported="false" />
         <activity
             android:name=".GameTicTacToeMedium"
             android:exported="false" />
-
         <activity
             android:name=".GameTicTacToeEasy"
             android:exported="false" />
-
         <activity
             android:name=".ChooseMode"
             android:exported="false" />
