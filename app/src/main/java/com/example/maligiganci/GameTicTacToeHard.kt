@@ -32,11 +32,7 @@ class GameTicTacToeHard : AppCompatActivity() {
         setContentView(binding.root)
         initBoard()
 
-        val button = findViewById<View>(R.id.button_go_back)
-        button.setOnClickListener {
-            val intent = Intent(this, ChooseMode::class.java)
-            startActivity(intent)
-        }
+
 
         if (firstTurn == Turn.CROSS) {
             // Jeśli pierwszy ruch należy do komputera, wykonaj jego ruch po 1 sekundzie

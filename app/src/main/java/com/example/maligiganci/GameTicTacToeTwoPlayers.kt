@@ -30,11 +30,7 @@ class GameTicTacToeTwoPlayers : AppCompatActivity() {
         setContentView(binding.root)
         initBoard()
 
-        val button = findViewById<View>(R.id.button_go_back)
-        button.setOnClickListener {
-            val intent = Intent(this, ChooseMode::class.java)
-            startActivity(intent)
-        }
+
     }
 
     private fun initBoard(){
