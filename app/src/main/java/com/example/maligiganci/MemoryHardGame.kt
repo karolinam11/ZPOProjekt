@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.TextView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-class MemoryGame : AppCompatActivity() {
 
+class MemoryHardGame : AppCompatActivity() {
+    val db = Firebase.firestore
     private var point = 0
     private var numOn = 1
     private lateinit var c1: TextView
@@ -29,9 +32,10 @@ class MemoryGame : AppCompatActivity() {
     private lateinit var card15: TextView
     private lateinit var card16: TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_memory_game)
+        setContentView(R.layout.activity_memory_hard_game)
 
         // Initialize the card views
         card1 = findViewById(R.id.Card1)
@@ -87,15 +91,14 @@ class MemoryGame : AppCompatActivity() {
                 pointsTextView.text = "Points: $point"
             } else {
                 Handler().postDelayed({
-                    c1.setBackgroundResource(R.drawable.camel)
-                    c2.setBackgroundResource(R.drawable.camel)
+                    c1.setBackgroundResource(R.drawable.x)
+                    c2.setBackgroundResource(R.drawable.x)
                     c1.isEnabled = true
                     c2.isEnabled = true
                 }, 400)
                 Handler().postDelayed({
                     c1.text = ""
-                    c2.text = ""
-                }, 400)
+                    c2.text = ""                }, 400)
 
             }
         }
@@ -105,7 +108,7 @@ class MemoryGame : AppCompatActivity() {
             pointsTextView.text = "Points: $point"
             solution()
             for (card in cards) {
-                card.setBackgroundResource(R.drawable.camel)
+                card.setBackgroundResource(R.drawable.question)
                 card.isEnabled = true
             }
         }
@@ -130,15 +133,15 @@ class MemoryGame : AppCompatActivity() {
 
     private fun getCardDrawable(cardText: String): Int {
         return when (cardText) {
-            "1" -> R.drawable.coala
-            "2" -> R.drawable.bear
-            "3" -> R.drawable.fox
-            "4" -> R.drawable.lion
-            "5" -> R.drawable.monkey
-            "6" -> R.drawable.pancernik
-            "7" -> R.drawable.panda
-            "8" -> R.drawable.wolf
-            else -> R.drawable.camel
+            "1" -> R.drawable.usa
+            "2" -> R.drawable.canada
+            "3" -> R.drawable.china
+            "4" -> R.drawable.indie
+            "5" -> R.drawable.italy
+            "6" -> R.drawable.japan
+            "7" -> R.drawable.spain
+            "8" -> R.drawable.anglia
+            else -> R.drawable.question
         }
     }
 
@@ -146,13 +149,19 @@ class MemoryGame : AppCompatActivity() {
         point = 0
         val pointsTextView = findViewById<TextView>(R.id.points)
         pointsTextView.text = "Points: $point"
-        Game()
         val cards = arrayOf(
             card1, card2, card3, card4, card5, card6, card7, card8,
             card9, card10, card11, card12, card13, card14, card15, card16
         )
-        for (card in cards) {
-            card.setBackgroundResource(R.drawable.camel)
+
+        // Losowanie nowych wartości liczbowych do kart
+        val numbers = mutableListOf("1", "2", "3", "4", "5", "6", "7", "8", "1", "2", "3", "4", "5", "6", "7", "8")
+        numbers.shuffle()
+
+        for (i in cards.indices) {
+            val card = cards[i]
+            card.text = numbers[i]
+            card.setBackgroundResource(R.drawable.question)
             card.isEnabled = true
         }
     }
