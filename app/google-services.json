@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1051033922283",
+    "project_id": "maligiganci-17fec",
+    "storage_bucket": "maligiganci-17fec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1051033922283:android:6ed3b56f83d89c6d6f6cae",
+        "android_client_info": {
+          "package_name": "com.example.maligiganci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1051033922283-ddpg18f22n723feufcc8as9si9jm34ro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1imLeHyyN094JJFozW3EIQ6AFqNaGksA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1051033922283-ddpg18f22n723feufcc8as9si9jm34ro.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
