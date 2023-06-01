@@ -25,7 +25,7 @@ class CalculatorActivity : AppCompatActivity() {
 
             if (et_name.text.toString().isEmpty()) {
 
-                Toast.makeText(this@CalculatorActivity, "Please enter your name", Toast.LENGTH_SHORT)
+                Toast.makeText(this@CalculatorActivity, "Wpisz swoje imie", Toast.LENGTH_SHORT)
                     .show()
             } else {
 

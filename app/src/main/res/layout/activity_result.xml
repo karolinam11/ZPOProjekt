@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Result"
+        android:text="Wynik"
         android:textColor="@android:color/white"
         android:textSize="25sp"
         android:textStyle="bold" />
@@ -22,7 +22,7 @@
     <ImageView
         android:id="@+id/iv_trophy"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="254dp"
         android:contentDescription="image"
         android:src="@drawable/ic_trophy" />
 
@@ -31,10 +31,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Hey, Congratulations!"
+        android:text="Hej, gratulacje!"
         android:textColor="@android:color/white"
         android:textSize="25sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/tv_name"
@@ -53,7 +53,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@android:color/secondary_text_dark"
         android:textSize="20sp"
-        tools:text="Your Score is 9 out of 10" />
+        tools:text="Twój wynik to 9 z 10" />
 
     <Button
         android:id="@+id/btn_finish"
@@ -61,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:background="@android:color/white"
-        android:text="FINISH"
+        android:text="KONIEC"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp"
         android:textStyle="bold" />

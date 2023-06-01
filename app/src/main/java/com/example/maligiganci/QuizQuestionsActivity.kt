@@ -131,9 +131,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
                     if (mCurrentPosition == mQuestionsList!!.size) {
-                        btn_submit.text = "FINISH"
+                        btn_submit.text = "Koniec"
                     } else {
-                        btn_submit.text = "GO TO NEXT QUESTION"
+                        btn_submit.text = "Następne pytanie"
                     }
 
                     mSelectedOptionPosition = 0
@@ -152,9 +152,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         defaultOptionsView()
 
         if (mCurrentPosition == mQuestionsList!!.size) {
-            btn_submit.text = "FINISH"
+            btn_submit.text = "Koniec"
         } else {
-            btn_submit.text = "SUBMIT"
+            btn_submit.text = "Zatwierdź"
         }
 
         progressBar.progress = mCurrentPosition

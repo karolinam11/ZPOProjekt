@@ -21,7 +21,7 @@
             android:gravity="center"
             android:textColor="#363A43"
             android:textSize="22sp"
-            tools:text="What country does this flag belong to?" />
+            tools:text="Jaki kraj posiada taką flagę" />
 
         <ImageView
             android:id="@+id/iv_image"
@@ -101,7 +101,7 @@
             android:padding="15dp"
             android:textColor="#7A8089"
             android:textSize="18sp"
-            tools:text="Android Inc." />
+            tools:text="Niemcy" />
 
         <TextView
             android:id="@+id/tv_option_four"
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@color/colorPrimary"
-            android:text="SUBMIT"
+            android:text="Zatwierdź"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
