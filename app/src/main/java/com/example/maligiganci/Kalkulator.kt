@@ -14,7 +14,7 @@ class Kalkulator : AppCompatActivity() {
 
     val button = findViewById<View>(R.id.button_play)
     button.setOnClickListener {
-        val intent = Intent(this@Kalkulator, ChooseMode::class.java)
+        val intent = Intent(this@Kalkulator, CalculatorActivity::class.java)
         startActivity(intent) }
     }
 }

@@ -17,4 +17,8 @@
     <color name="you_lose">#FF3B3B</color>
     <color name="draw">#7BB1EF</color>
     <color name="light_gray">#D3D3D3</color>
+
+    <color name="colorPrimary">#9013FE</color>
+    <color name="colorPrimaryDark">#6A1B9A</color>
+    <color name="colorAccent">#9013FE</color>
 </resources>
