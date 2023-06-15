@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.TextView
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.ktx.Firebase
 
 
 class MemoryEasyGame : AppCompatActivity() {
-    val db = Firebase.firestore
+
     private var point = 0
     private var numOn = 1
     private lateinit var c1: TextView

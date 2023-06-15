@@ -11,7 +11,6 @@ class Kalkulator : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_kalkulator)
-
     val button = findViewById<View>(R.id.button_play)
     button.setOnClickListener {
         val intent = Intent(this@Kalkulator, CalculatorActivity::class.java)

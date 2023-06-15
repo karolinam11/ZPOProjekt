@@ -11,6 +11,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import com.squareup.picasso.Picasso
+
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition: Int = 1 // Default and the first question position
@@ -40,6 +42,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         //This call the parent constructor
         super.onCreate(savedInstanceState)
+        Constants.getQuestions {  }
         setContentView(R.layout.activity_quiz_questions)
 
         tv_option_one = findViewById(R.id.tv_option_one)
@@ -55,9 +58,10 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         mUserName = intent.getStringExtra(Constants.USER_NAME)
         // END
 
-        mQuestionsList = Constants.getQuestions()
-
-        setQuestion()
+        Constants.getQuestions { questionsList ->
+            mQuestionsList = questionsList
+            setQuestion()
+        }
 
         tv_option_one.setOnClickListener(this)
         tv_option_two.setOnClickListener(this)
@@ -71,7 +75,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
 
             R.id.tv_option_one -> {
-
                 selectedOptionView(tv_option_one, 1)
             }
 
@@ -93,9 +96,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             R.id.btn_submit -> {
 
                 if (mSelectedOptionPosition == 0) {
-
                     mCurrentPosition++
-
                     when {
 
                         mCurrentPosition <= mQuestionsList!!.size -> {
@@ -117,6 +118,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 } else {
+
                     val question = mQuestionsList?.get(mCurrentPosition - 1)
 
                     // This is to check if the answer is wrong
@@ -158,14 +160,17 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         progressBar.progress = mCurrentPosition
-        tv_progress.text = "$mCurrentPosition" + "/" + progressBar.getMax()
+        tv_progress.text = "$mCurrentPosition" + "/" + progressBar.max
 
-        tv_question.text = question.question
-        iv_image.setImageResource(question.image)
-        tv_option_one.text = question.optionOne
-        tv_option_two.text = question.optionTwo
-        tv_option_three.text = question.optionThree
-        tv_option_four.text = question.optionFour
+        tv_question.text = question.questionText
+        // You will need to handle the image loading logic here based on the question's image property.
+             Picasso.get()
+                 .load(question.questionPhoto)
+                 .into(iv_image)
+        tv_option_one.text = question.answerA
+        tv_option_two.text = question.answerB
+        tv_option_three.text = question.answerC
+        tv_option_four.text = question.answerD
     }
 
     /**

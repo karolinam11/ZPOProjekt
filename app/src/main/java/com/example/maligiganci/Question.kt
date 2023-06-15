@@ -1,12 +1,14 @@
 package com.example.maligiganci
 
 data class Question(
-    val id: Int,
-    val question: String,
-    val image: Int,
-    val optionOne: String,
-    val optionTwo: String,
-    val optionThree: String,
-    val optionFour: String,
-    val correctAnswer: Int
-)
+    var questionId: Int,
+    var questionText: String,
+    var questionPhoto: String,
+    var answerA: String,
+    var answerB: String,
+    var answerC: String,
+    var answerD: String,
+    var correctAnswer: Int
+) {
+    constructor() : this(0, "", "", "", "", "", "", 0)
+}

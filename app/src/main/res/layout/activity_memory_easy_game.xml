@@ -69,8 +69,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card1"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="0"
             android:background="@drawable/camel"
@@ -79,8 +79,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="1"
             android:background="@drawable/camel"
@@ -89,8 +89,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card3"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="2"
             android:background="@drawable/camel"
@@ -99,8 +99,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card4"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="3"
             android:background="@drawable/camel"
@@ -109,8 +109,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card5"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="0"
             android:background="@drawable/camel"
@@ -119,8 +119,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card6"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="1"
             android:background="@drawable/camel"
@@ -129,8 +129,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card7"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="2"
             android:background="@drawable/camel"
@@ -139,8 +139,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card8"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="3"
             android:background="@drawable/camel"
@@ -149,8 +149,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card9"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="2"
             android:layout_column="0"
             android:background="@drawable/camel"
@@ -159,8 +159,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card10"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="2"
             android:layout_column="1"
             android:background="@drawable/camel"
@@ -169,8 +169,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card11"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="2"
             android:layout_column="2"
             android:background="@drawable/camel"
@@ -179,8 +179,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card12"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="2"
             android:layout_column="3"
             android:background="@drawable/camel"
@@ -189,8 +189,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card13"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="3"
             android:layout_column="0"
             android:background="@drawable/camel"
@@ -199,8 +199,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card14"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="3"
             android:layout_column="1"
             android:background="@drawable/camel"
@@ -209,8 +209,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card15"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="3"
             android:layout_column="2"
             android:background="@drawable/camel"
@@ -219,8 +219,8 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/Card16"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="3"
             android:layout_column="3"
             android:background="@drawable/camel"

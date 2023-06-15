@@ -1,117 +1,65 @@
 package com.example.maligiganci
 
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+
 object Constants {
 
-    // TODO (STEP 1: Create a constant variables which we required in the result screen.)
-    // START
     const val USER_NAME: String = "user_name"
     const val TOTAL_QUESTIONS: String = "total_questions"
     const val CORRECT_ANSWERS: String = "correct_answers"
-    // END
 
-    fun getQuestions(): ArrayList<Question> {
-        val questionsList = ArrayList<Question>()
+    fun getQuestions(callback: (ArrayList<Question>) -> Unit) {
+        val dbRef = FirebaseDatabase.getInstance().getReference("questions")
 
-        // 1
-        val que1 = Question(
-            1, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_argentina,
-            "Argentina", "Australia",
-            "Armenia", "Austria", 1
-        )
+        dbRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val questionsList =
+                    ArrayList<Question>() // Przeniesienie inicjalizacji listy do metody onDataChange
 
-        questionsList.add(que1)
+                if (dataSnapshot.exists()) {
+                    for (flagSnapshot in dataSnapshot.children) {
+                        val questionData = flagSnapshot.getValue(Question::class.java)
+                        print(questionData)
+                        val id = questionData?.questionId as Int
+                        val question = questionData?.questionText as String
+                        val image = questionData?.questionPhoto as String
+                        val option1 = questionData?.answerA as String
+                        val option2 = questionData?.answerB as String
+                        val option3 = questionData?.answerC as String
+                        val option4 = questionData?.answerD as String
+                        val correctAnswer = questionData?.correctAnswer as Int
+                        val questionObject = Question(
+                            id,
+                            question,
+                            image,
+                            option1,
+                            option2,
+                            option3,
+                            option4,
+                            correctAnswer
+                        )
+                        questionsList.add(questionObject)
 
-        // 2
-        val que2 = Question(
-            2, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_australia,
-            "Angola", "Austria",
-            "Australia", "Armenia", 3
-        )
+                    }
 
-        questionsList.add(que2)
+                    callback(questionsList)
 
-        // 3
-        val que3 = Question(
-            3, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_brazil,
-            "Belarus", "Belize",
-            "Brunei", "Brazil", 4
-        )
+                    fun doSomethingWithQuestions() {
+                        getQuestions { questionsList ->
+                            for (question in questionsList) {
+                                println(question.questionText)
+                            }
+                        }
+                    }
+                }
+            }
 
-        questionsList.add(que3)
-
-        // 4
-        val que4 = Question(
-            4, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_belgium,
-            "Bahamas", "Belgium",
-            "Barbados", "Belize", 2
-        )
-
-        questionsList.add(que4)
-
-        // 5
-        val que5 = Question(
-            5, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_fiji,
-            "Gabon", "France",
-            "Fiji", "Finland", 3
-        )
-
-        questionsList.add(que5)
-
-        // 6
-        val que6 = Question(
-            6, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_germany,
-            "Germany", "Georgia",
-            "Greece", "none of these", 1
-        )
-
-        questionsList.add(que6)
-
-        // 7
-        val que7 = Question(
-            7, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_denmark,
-            "Dominica", "Egypt",
-            "Denmark", "Ethiopia", 3
-        )
-
-        questionsList.add(que7)
-
-        // 8
-        val que8 = Question(
-            8, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_india,
-            "Ireland", "Iran",
-            "Hungary", "India", 4
-        )
-
-        questionsList.add(que8)
-
-        // 9
-        val que9 = Question(
-            9, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_new_zealand,
-            "Australia", "New Zealand",
-            "Tuvalu", "United States of America", 2
-        )
-
-        questionsList.add(que9)
-
-        // 10
-        val que10 = Question(
-            10, "What country does this flag belong to?",
-            R.drawable.ic_flag_of_kuwait,
-            "Kuwait", "Jordan",
-            "Sudan", "Palestine", 1
-        )
-
-        questionsList.add(que10)
-
-        return questionsList
+            override fun onCancelled(error: DatabaseError) {
+                // Handle database error
+            }
+        })
     }
 }
