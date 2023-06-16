@@ -1,5 +1,6 @@
 package com.example.maligiganci
 
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -87,6 +88,11 @@ class MemoryEasyGame : AppCompatActivity() {
                 c2.text = ""
                 point++
                 pointsTextView.text = "Points: $point"
+
+                if (point == 8) {
+                    // Wygrana - wszystkie pary zostały odgadnięte
+                    showResultDialog("Wygrana", "Gratulacje! Udało Ci się odgadnąć wszystkie pary!")
+                }
             } else {
                 Handler().postDelayed({
                     c1.setBackgroundResource(R.drawable.camel)
@@ -139,10 +145,21 @@ class MemoryEasyGame : AppCompatActivity() {
         }
     }
 
+    private fun showResultDialog(title: String, message: String) {
+        AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage(message)
+            .setPositiveButton("Zagraj ponownie") { _, _ ->
+                resetGame()
+            }
+            .setCancelable(false)
+            .show()
+    }
+
     fun resetGame() {
         point = 0
         val pointsTextView = findViewById<TextView>(R.id.points)
-        pointsTextView.text = "Points: $point"
+        pointsTextView.text = "Punkty: $point"
         val cards = arrayOf(
             card1, card2, card3, card4, card5, card6, card7, card8,
             card9, card10, card11, card12, card13, card14, card15, card16

@@ -127,6 +127,7 @@ class GameTicTacToeHard : AppCompatActivity() {
             .show()
     }
 
+    //zamiana kolejności zaczynania gry i reset planszy
     private fun resetBoard() {
         for (button in boardList) {
             button.text = ""

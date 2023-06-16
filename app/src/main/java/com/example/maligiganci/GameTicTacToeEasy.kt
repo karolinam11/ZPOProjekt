@@ -35,6 +35,7 @@ class GameTicTacToeEasy : AppCompatActivity() {
 
         if (firstTurn == Turn.CROSS) {
             // Jeśli pierwszy ruch należy do komputera, wykonaj jego ruch po 1 sekundzie
+            //dodanie do planszy znaku w randomowym miejscu
             Handler().postDelayed({
                 val randomButton = getEmptyRandomButton()
                 if (randomButton != null) {
@@ -63,6 +64,7 @@ class GameTicTacToeEasy : AppCompatActivity() {
         // Użytkownik wykonuje ruch
         addToBoard(view)
 
+        //sprawdzenie warunku zwycięstwa
         if (checkForVictory(NOUGHT)) {
             noughtsScore++
             result("Wygrywasz!")
@@ -126,6 +128,7 @@ class GameTicTacToeEasy : AppCompatActivity() {
             .show()
     }
 
+    //zamiana kolejności zaczynania gry i reset planszy
     private fun resetBoard() {
         for (button in boardList) {
             button.text = ""
@@ -174,7 +177,7 @@ class GameTicTacToeEasy : AppCompatActivity() {
     }
 
     private fun getEmptyRandomButton(): Button? {
-        val emptyButtons = boardList.filter { it.text.isEmpty() }
+        val emptyButtons = boardList.filter { it.text.isEmpty() } //lista przycisków które są puste na planszy
         return emptyButtons.randomOrNull()
     }
 

@@ -1,16 +1,18 @@
 package com.example.maligiganci
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.TextView
-
+import androidx.appcompat.app.AlertDialog
 
 
 class MemoryHardGame : AppCompatActivity() {
     private var point = 0
     private var numOn = 1
+    private var buttonCount = 0  // Dodana zmienna do zliczania ilości naciśniętych przycisków
     private lateinit var c1: TextView
     private lateinit var c2: TextView
     private lateinit var card1: TextView
@@ -86,7 +88,7 @@ class MemoryHardGame : AppCompatActivity() {
                 c1.text = ""
                 c2.text = ""
                 point++
-                pointsTextView.text = "Points: $point"
+                pointsTextView.text = "Punkty: $point"
             } else {
                 Handler().postDelayed({
                     c1.setBackgroundResource(R.drawable.x)
@@ -124,6 +126,13 @@ class MemoryHardGame : AppCompatActivity() {
                         check()
                         numOn = 1
                     }
+
+                    // Zwiększanie wartości zmiennej buttonCount o 1
+                    buttonCount++
+                    // Sprawdzenie, czy buttonCount wynosi 16
+                    if (buttonCount == 16) {
+                        showPointsDialog()
+                    }
                 }
             }
         }
@@ -145,6 +154,7 @@ class MemoryHardGame : AppCompatActivity() {
 
     fun resetGame() {
         point = 0
+        buttonCount =0
         val pointsTextView = findViewById<TextView>(R.id.points)
         pointsTextView.text = "Points: $point"
         val cards = arrayOf(
@@ -163,4 +173,20 @@ class MemoryHardGame : AppCompatActivity() {
             card.isEnabled = true
         }
     }
+    fun getButtonCount(): Int {
+        return buttonCount
+    }
+    private fun showPointsDialog() {
+        val points = point
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle("Uzyskane punkty")
+            .setMessage("Ilość zdobytych punktów: $points")
+            .setPositiveButton("Restartuj grę", DialogInterface.OnClickListener { dialog, _ ->
+                dialog.dismiss()
+                resetGame()
+            })
+            .create()
+            .show()
+    }
+
 }

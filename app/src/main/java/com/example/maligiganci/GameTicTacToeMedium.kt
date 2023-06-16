@@ -237,7 +237,7 @@ class GameTicTacToeMedium : AppCompatActivity() {
     }
 
     private fun getEmptyRandomButton(): Button? {
-        val emptyButtons = boardList.filter { it.text.isEmpty() }
+        val emptyButtons = boardList.filter { it.text.isEmpty() } //lista przycisków które są puste na planszy
         return emptyButtons.randomOrNull()
     }
 

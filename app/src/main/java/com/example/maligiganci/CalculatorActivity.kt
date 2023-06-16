@@ -10,9 +10,7 @@ import com.example.maligiganci.QuizQuestionsActivity
 
 
 class CalculatorActivity : AppCompatActivity() {
-    /**
-     * This function is auto created by Android when the Activity Class is created.
-     */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         //This call the parent constructor
         super.onCreate(savedInstanceState)
