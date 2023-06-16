@@ -87,7 +87,12 @@ class MemoryEasyGame : AppCompatActivity() {
                 c1.text = ""
                 c2.text = ""
                 point++
-                pointsTextView.text = "Points: $point"
+                pointsTextView.text = "Punkty: $point"
+
+                if (point == 8) {
+                        // Wygrana - wszystkie pary zostały odgadnięte
+                        showResultDialog("Wygrana", "Gratulacje! Udało Ci się odgadnąć wszystkie pary!")
+                    }
 
                 if (point == 8) {
                     // Wygrana - wszystkie pary zostały odgadnięte

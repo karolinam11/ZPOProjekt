@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
         val button3 = findViewById<View>(R.id.imageButton3)
         button3.setOnClickListener {
-            val intent = Intent(this@MainActivity, Kalkulator::class.java)
+            val intent = Intent(this@MainActivity, Quiz::class.java)
             startActivity(intent)
         }
     }

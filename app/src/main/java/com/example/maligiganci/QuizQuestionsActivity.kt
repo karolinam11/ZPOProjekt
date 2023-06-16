@@ -31,7 +31,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mSelectedOptionPosition: Int = 0
     private var mCorrectAnswers: Int = 0
 
-    // TODO (STEP 3: Create a variable for getting the name from intent.)
     // START
     private var mUserName: String? = null
     // END
@@ -105,7 +104,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
                         else -> {
 
-                            // TODO (STEP 5: Now remove the toast message and launch the result screen which we have created and also pass the user name and score details to it.)
                             // START
                             val intent =
                                 Intent(this@QuizQuestionsActivity, ResultActivity::class.java)

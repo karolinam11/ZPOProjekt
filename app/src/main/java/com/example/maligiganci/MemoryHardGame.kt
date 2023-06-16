@@ -156,7 +156,7 @@ class MemoryHardGame : AppCompatActivity() {
         point = 0
         buttonCount =0
         val pointsTextView = findViewById<TextView>(R.id.points)
-        pointsTextView.text = "Points: $point"
+        pointsTextView.text = "Punkty: $point"
         val cards = arrayOf(
             card1, card2, card3, card4, card5, card6, card7, card8,
             card9, card10, card11, card12, card13, card14, card15, card16

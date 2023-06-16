@@ -7,7 +7,7 @@
     android:gravity="center"
     android:background="@drawable/gradient_background"
     android:orientation="vertical"
-    tools:context=".CalculatorActivity">
+    tools:context=".QuziActivity">
 
     <TextView
         android:id="@+id/tv_app_name"

@@ -1,85 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ChoosePlayer"
-        android:background="@drawable/gradient_background">>
-
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoosePlayer"
+    android:background="@drawable/gradient_background">
     <TextView
-            android:text="Wybierz gracza"
-            android:layout_width="335dp"
-            android:layout_height="113dp"
-            android:id="@+id/ChoosePlayer"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.069" />
-
-    <ImageButton
-        android:id="@+id/ButtonPlayer1"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/woman"
+        android:id="@+id/ChooseDifficultyLevel"
+        android:layout_width="335dp"
+        android:layout_height="113dp"
+        android:gravity="center"
+        android:text="Wybierz poziom trudności"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
-
-    <ImageButton
-        android:id="@+id/ButtonPlayer2"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:background="@drawable/man"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.766"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.299" />
-
-    <TextView
-            android:text="Wybierz poziom trudności"
-            android:layout_width="335dp"
-            android:layout_height="113dp"
-            android:id="@+id/ChooseDifficultyLevel"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.139" />
 
     <androidx.appcompat.widget.AppCompatButton
-            android:text="Łatwy"
-            android:layout_width="167dp"
-            android:layout_height="64dp"
-            android:id="@+id/button_easy_level"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:background="@drawable/btn_purple_with_pink_corner"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.746" />
+        android:id="@+id/button_easy_level"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:background="@drawable/btn_purple_with_pink_corner"
+        android:text="Łatwy"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.433" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_medium_level"
-        android:layout_width="167dp"
-        android:layout_height="64dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
         android:background="@drawable/btn_purple_with_pink_corner"
         android:text="Średni"
         android:textColor="@color/white"
@@ -89,12 +49,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.859" />
+        app:layout_constraintVertical_bias="0.614" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_hard_level"
-        android:layout_width="167dp"
-        android:layout_height="64dp"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
         android:background="@drawable/btn_purple_with_pink_corner"
         android:text="Trudny"
         android:textColor="@color/white"
@@ -104,6 +64,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.799" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

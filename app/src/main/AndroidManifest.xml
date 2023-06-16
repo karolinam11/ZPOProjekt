@@ -18,7 +18,7 @@
             android:name=".QuizQuestionsActivity"
             android:exported="false" />
         <activity
-            android:name=".CalculatorActivity"
+            android:name=".QuizActivity"
             android:exported="false" />
         <activity
             android:name=".Constans"
@@ -79,7 +79,7 @@
             android:name=".PlayerWins"
             android:exported="false" />
         <activity
-            android:name=".Kalkulator"
+            android:name=".Quiz"
             android:exported="false" />
         <activity
             android:name=".TicTacToe"
