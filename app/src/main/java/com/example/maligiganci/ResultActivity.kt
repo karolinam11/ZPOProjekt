@@ -16,7 +16,7 @@ class ResultActivity : AppCompatActivity() {
         val tv_name: TextView = findViewById(R.id.tv_name)
         val tv_score: TextView = findViewById(R.id.tv_score)
         val btn_finish: Button = findViewById(R.id.btn_finish)
-        // TODO (STEP 6: Hide the status bar and get the details from intent and set it to the UI. And also add a click event to the finish button.)
+        // Hide the status bar and get the details from intent and set it to the UI. And also add a click event to the finish button.
         // START
         // Hide the status bar.
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN

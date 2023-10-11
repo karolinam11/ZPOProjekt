@@ -26,10 +26,10 @@ class QuizActivity : AppCompatActivity() {
             } else {
 
                 val intent = Intent(this@QuizActivity, QuizQuestionsActivity::class.java)
-                // TODO (STEP 2: Pass the name through intent using the constant variable which we have created.)
+                // Pass the name through intent using the constant variable which we have created.
                 // START
                 intent.putExtra(Constants.USER_NAME, et_name.text.toString())
-                // END
+                // TODO (END)
                 startActivity(intent)
                 finish()
             }
