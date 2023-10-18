@@ -19,5 +19,9 @@ class Quiz : AppCompatActivity() {
     button2.setOnClickListener {
         val intent = Intent(this@Quiz, QuizActivityMath::class.java)
         startActivity(intent) }
-    }
+    val button3 = findViewById<View>(R.id.button_play_english)
+    button3.setOnClickListener {
+        val intent = Intent(this@Quiz, QuizActivityEnglish::class.java)
+        startActivity(intent) }
+}
 }
