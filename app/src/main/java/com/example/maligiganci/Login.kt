@@ -10,6 +10,9 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.facebook.CallbackManager
+import com.facebook.FacebookCallback
+import com.facebook.FacebookException
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -18,6 +21,9 @@ import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.facebook.login.LoginManager
+import com.facebook.login.LoginResult
+
 
 class Login : AppCompatActivity() {
     private lateinit var editTextEmail: TextInputEditText
@@ -26,6 +32,7 @@ class Login : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var progressBAr: ProgressBar
     private lateinit var textView: TextView
+
 
     //Sprawdzenie czy użytkownbik jest już zalogowany
     public override fun onStart() {
@@ -106,6 +113,37 @@ class Login : AppCompatActivity() {
         button_google.setOnClickListener{
             signInGoogle()
         }
+
+
+        val button_fb = findViewById<View>(R.id.btn_login_facebook)
+        button_fb.setOnClickListener {
+            // Rozpocznij proces logowania przez Facebook
+            LoginManager.getInstance().logInWithReadPermissions(this, listOf("email", "public_profile"))
+
+            // Dodaj CallbackManager do obsługi wyników logowania
+            val callbackManager = CallbackManager.Factory.create()
+            LoginManager.getInstance().registerCallback(callbackManager, object :
+                FacebookCallback<LoginResult> {
+                override fun onSuccess(loginResult: LoginResult) {
+                    // Logowanie przez Facebook zakończone sukcesem
+                    val accessToken = loginResult.accessToken
+                    val intent = Intent(this@Login, MainActivity::class.java)
+                    intent.putExtra("email", "email_value") // Przykładowe dane do przekazania
+                    intent.putExtra("name", "name_value") // Przykładowe dane do przekazania
+                    startActivity(intent)                }
+
+                override fun onCancel() {
+                    // Obsługa anulowania logowania przez Facebook
+                    Toast.makeText(this@Login, "Logowanie przez Facebook anulowane", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onError(error: FacebookException) {
+                    // Obsługa błędu logowania przez Facebook
+                    Toast.makeText(this@Login, "Błąd logowania przez Facebook: ${error.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
+
 
         val button = findViewById<View>(R.id.btn_login)
         button.setOnClickListener {
