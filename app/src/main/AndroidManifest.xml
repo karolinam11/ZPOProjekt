@@ -26,6 +26,27 @@
                 android:name=".ResultActivity"
                 android:exported="false" />
         <activity
+        android:name=".ResultActivityEnglish"
+        android:exported="false" />
+        <activity
+            android:name=".QuizQuestionsActivityEnglish"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivityEnglish"
+            android:exported="false" />
+        <activity
+            android:name=".ResultActivityMath"
+            android:exported="false" />
+        <activity
+            android:name=".QuizQuestionsActivityMath"
+            android:exported="false" />
+        <activity
+            android:name=".QuizActivityMath"
+            android:exported="false" />
+        <activity
+            android:name=".ResultActivity"
+            android:exported="false" />
+        <activity
                 android:name=".QuizQuestionsActivity"
                 android:exported="false" />
         <activity

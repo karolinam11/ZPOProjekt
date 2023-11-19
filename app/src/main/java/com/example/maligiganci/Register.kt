@@ -72,6 +72,11 @@ class Register : AppCompatActivity() {
                             "Konto zostało stworzone.",
                             Toast.LENGTH_SHORT,
                         ).show()
+
+                        // Po zarejestrowaniu użytkownika, przenieś go do aktywności MakePlayer
+                        val intent = Intent(this@Register, MakePlayer::class.java)
+                        startActivity(intent)
+                        finish()
                     } else {
                         progressBAr.setVisibility(View.GONE)
                         Toast.makeText(

@@ -12,6 +12,7 @@ class MemoryEasyGame : AppCompatActivity() {
 
     private var point = 0
     private var numOn = 1
+    private var currentCardSet = 1
     private lateinit var c1: TextView
     private lateinit var c2: TextView
     private lateinit var card1: TextView
@@ -58,7 +59,10 @@ class MemoryEasyGame : AppCompatActivity() {
         resetButton.setOnClickListener {
             resetGame()
         }
-
+        val changeViewButton = findViewById<View>(R.id.changeViewButton)
+        changeViewButton.setOnClickListener {
+            changeCardView()
+        }
         Game()
     }
 
@@ -100,8 +104,14 @@ class MemoryEasyGame : AppCompatActivity() {
                 }
             } else {
                 Handler().postDelayed({
-                    c1.setBackgroundResource(R.drawable.camel)
-                    c2.setBackgroundResource(R.drawable.camel)
+                    if (currentCardSet == 1){
+                        c1.setBackgroundResource(R.drawable.camel)
+                        c2.setBackgroundResource(R.drawable.camel)
+                    }
+                    else{
+                        c1.setBackgroundResource(R.drawable.fruit)
+                        c2.setBackgroundResource(R.drawable.fruit)
+                    }
                     c1.isEnabled = true
                     c2.isEnabled = true
                 }, 400)
@@ -113,7 +123,12 @@ class MemoryEasyGame : AppCompatActivity() {
             pointsTextView.text = "Points: $point"
             solution()
             for (card in cards) {
-                card.setBackgroundResource(R.drawable.camel)
+                if (currentCardSet == 1) {
+                    card.setBackgroundResource(R.drawable.camel)
+                }
+                else{
+                    card.setBackgroundResource(R.drawable.fruit)
+                }
                 card.isEnabled = true
             }
         }
@@ -124,10 +139,20 @@ class MemoryEasyGame : AppCompatActivity() {
                     if (numOn == 1) {
                         numOn = 2
                         c1 = card
-                        card.setBackgroundResource(getCardDrawable(card.text.toString()))
+                        if (currentCardSet == 1) {
+                            card.setBackgroundResource(getCardDrawable(card.text.toString()))
+                        }
+                        else{
+                            card.setBackgroundResource(getCardDrawable2(card.text.toString()))
+                        }
                     } else if (c1 != card) {
                         c2 = card
-                        card.setBackgroundResource(getCardDrawable(card.text.toString()))
+                        if (currentCardSet == 1) {
+                            card.setBackgroundResource(getCardDrawable(card.text.toString()))
+                        }
+                        else{
+                            card.setBackgroundResource(getCardDrawable2(card.text.toString()))
+                        }
                         check()
                         numOn = 1
                     }
@@ -150,6 +175,19 @@ class MemoryEasyGame : AppCompatActivity() {
         }
     }
 
+    private fun getCardDrawable2(cardText: String): Int {
+        return when (cardText) {
+            "1" -> R.drawable.strawberry
+            "2" -> R.drawable.apple
+            "3" -> R.drawable.fish
+            "4" -> R.drawable.mushroom
+            "5" -> R.drawable.cherry
+            "6" -> R.drawable.grapes
+            "7" -> R.drawable.lemon
+            "8" -> R.drawable.watermelon
+            else -> R.drawable.fruit
+        }
+    }
     private fun showResultDialog(title: String, message: String) {
         AlertDialog.Builder(this)
             .setTitle(title)
@@ -160,7 +198,15 @@ class MemoryEasyGame : AppCompatActivity() {
             .setCancelable(false)
             .show()
     }
-
+    fun changeCardView(){
+        if (currentCardSet == 1){
+            currentCardSet = 2
+        }
+        else {
+            currentCardSet = 1
+        }
+        resetGame()
+    }
     fun resetGame() {
         point = 0
         val pointsTextView = findViewById<TextView>(R.id.points)
@@ -177,7 +223,12 @@ class MemoryEasyGame : AppCompatActivity() {
         for (i in cards.indices) {
             val card = cards[i]
             card.text = numbers[i]
-            card.setBackgroundResource(R.drawable.camel)
+            if (currentCardSet == 1){
+                card.setBackgroundResource(R.drawable.camel)
+            }
+            else {
+                card.setBackgroundResource(R.drawable.fruit)
+            }
             card.isEnabled = true
         }
     }

@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.*
 
 
-class QuizActivity : AppCompatActivity() {
-
+class QuizActivityMath : AppCompatActivity() {
+    /**
+     * This function is auto created by Android when the Activity Class is created.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         //This call the parent constructor
         super.onCreate(savedInstanceState)
@@ -19,13 +21,14 @@ class QuizActivity : AppCompatActivity() {
 
             if (et_name.text.toString().isEmpty()) {
 
-                Toast.makeText(this@QuizActivity, "Wpisz swoje imie", Toast.LENGTH_SHORT)
+                Toast.makeText(this@QuizActivityMath, "Wpisz swoje imie", Toast.LENGTH_SHORT)
                     .show()
             } else {
 
-                val intent = Intent(this@QuizActivity, QuizQuestionsActivity::class.java)
+                val intent = Intent(this@QuizActivityMath, QuizQuestionsActivityMath::class.java)
+                // Pass the name through intent using the constant variable which we have created.
                 // START
-                intent.putExtra(Constants.USER_NAME, et_name.text.toString())
+                intent.putExtra(ConstantsMath.USER_NAME, et_name.text.toString())
                 // TODO (END)
                 startActivity(intent)
                 finish()
