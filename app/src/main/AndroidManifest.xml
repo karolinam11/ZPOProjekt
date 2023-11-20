@@ -43,9 +43,9 @@
         <activity
             android:name=".QuizActivityMath"
             android:exported="false" />
-        <activity
-            android:name=".ResultActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".ResultActivity"-->
+<!--            android:exported="false" />-->
         <activity
                 android:name=".QuizQuestionsActivity"
                 android:exported="false" />
@@ -53,7 +53,7 @@
                 android:name=".QuizActivity"
                 android:exported="false" />
         <activity
-                android:name=".Constans"
+                android:name=".Constants"
                 android:exported="false" />
         <activity
                 android:name=".MemoryEasyGame"
@@ -62,7 +62,7 @@
                 android:name=".MemoryChooseMode"
                 android:exported="false" />
         <activity
-                android:name=".StartActivity"
+                android:name="StartActivity"
                 android:exported="false" />
         <activity
                 android:name=".QuestionModel"
