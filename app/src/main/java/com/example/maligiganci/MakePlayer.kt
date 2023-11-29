@@ -1,25 +1,40 @@
-import androidx.appcompat.app.AppCompatActivity
+package com.example.maligiganci
+
 import android.os.Bundle
-import android.widget.ImageButton
-import com.example.maligiganci.R
-import com.google.firebase.auth.FirebaseAuth
+import androidx.appcompat.app.AppCompatActivity
+import com.example.maligiganci.databinding.ActivityMakePlayerBinding
+import com.google.firebase.storage.FirebaseStorage
+import com.bumptech.glide.Glide
 
 class MakePlayer : AppCompatActivity() {
-    private lateinit var changeProfilePictureButton: ImageButton
-    private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityMakePlayerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_make_player)
+        binding = ActivityMakePlayerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        changeProfilePictureButton = findViewById(R.id.changeProfilePicture)
+        binding.changeProfilePicture.setOnClickListener{
+            val storageRef = FirebaseStorage.getInstance().reference.child("profile")
+            storageRef.listAll().addOnSuccessListener { listResult ->
+                val files = listResult.items
+                if (files.isNotEmpty()) {
+                    val randomFileRef = files.random()
 
-        // Inicjalizacja Firebase Authentication
-        auth = FirebaseAuth.getInstance()
-
-        changeProfilePictureButton.setOnClickListener {
-            // Tutaj możesz dodać kod obsługujący kliknięcie przycisku.
-            // Po naciśnięciu będzie losowało się zdjęcie z bazy danych
+                    randomFileRef.downloadUrl.addOnSuccessListener { uri ->
+                        // Użyj Glide do załadowania zdjęcia
+                        Glide.with(this)
+                            .load(uri)
+                            .into(binding.changeProfilePicture)
+                    }.addOnFailureListener {
+                        // Obsługa błędów, np. logowanie błędu
+                    }
+                } else {
+                    // Brak plików w folderze
+                }
+            }.addOnFailureListener {
+                // Obsługa błędów, np. logowanie błędu
+            }
         }
     }
 }

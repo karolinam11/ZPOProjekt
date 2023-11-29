@@ -64,6 +64,9 @@
         <activity
                 android:name="StartActivity"
                 android:exported="false" />
+
+        <activity android:name=".MakePlayer" />
+
         <activity
                 android:name=".QuestionModel"
                 android:exported="false" />
@@ -93,9 +96,6 @@
                 android:exported="false"
                 android:label="@string/title_activity_game_tic_tac_toe"
                 android:theme="@style/Theme.MaliGiganci.NoActionBar" />
-        <activity
-                android:name=".MakePlayer"
-                android:exported="false" />
         <activity
                 android:name=".ChoosePlayer"
                 android:exported="false" />

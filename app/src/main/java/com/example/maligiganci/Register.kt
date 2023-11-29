@@ -1,11 +1,9 @@
 package com.example.maligiganci
 
-import MakePlayer
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -75,9 +73,8 @@ class Register : AppCompatActivity() {
                         ).show()
 
                         // Po zarejestrowaniu użytkownika, przenieś go do aktywności MakePlayer
-                        val intent = Intent(this@Register, MakePlayer::class.java)
+                        val intent = Intent(this, MakePlayer::class.java)
                         startActivity(intent)
-                        finish()
                     } else {
                         progressBAr.setVisibility(View.GONE)
                         Toast.makeText(
