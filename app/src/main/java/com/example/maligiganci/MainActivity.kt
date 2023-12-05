@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-
+import com.google.firebase.database.FirebaseDatabase
 class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
         else{
             textView.text = user?.email
+            saveEmailToFirebase(user?.email)
         }
 
         val button = findViewById<View>(R.id.imageButton1)
@@ -54,5 +55,12 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+
         }
+    private fun saveEmailToFirebase(email: String?) {
+        val databaseReference = FirebaseDatabase.getInstance().getReference("blockBaby")
+        email?.let {
+            databaseReference.child("email").setValue(it)
+        }
+    }
     }
