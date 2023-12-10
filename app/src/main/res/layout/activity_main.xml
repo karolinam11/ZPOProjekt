@@ -191,7 +191,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.288"
+            app:layout_constraintVertical_bias="0.935" />
+
+    <androidx.appcompat.widget.AppCompatButton
+            android:text="Konto"
+            android:id="@+id/button_contact"
+            android:layout_width="wrap_content"
+            android:textColor="@color/white"
+            android:background="@color/purple_500"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.765"
             app:layout_constraintVertical_bias="0.935" />
 
     <TextView

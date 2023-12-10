@@ -76,6 +76,11 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, Quiz::class.java)
             startActivity(intent)
         }
+        val button5 = findViewById<View>(R.id.button_contact)
+        button5.setOnClickListener {
+            val intent = Intent(this@MainActivity, Contact::class.java)
+            startActivity(intent)
+        }
 
         val button4 = findViewById<View>(R.id.logout)
         button4.setOnClickListener {
