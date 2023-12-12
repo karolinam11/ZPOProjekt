@@ -23,17 +23,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        val textView = findViewById<TextView>(R.id.user_details)
-//        auth = FirebaseAuth.getInstance()
-//        user = auth.currentUser
-//        if (user == null){
-//            val intent = Intent(this, Login::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
-//        else{
+        auth = FirebaseAuth.getInstance()
+        user = auth.currentUser
+        if (user == null){
+            val intent = Intent(this, Login::class.java)
+            startActivity(intent)
+            finish()
+        }
+        else{
 //            textView.text = user?.email
-//            saveEmailToFirebase(user?.email)
-//        }
+            saveEmailToFirebase(user?.email)
+        }
 
         val flagRef = FirebaseDatabase.getInstance().getReference("blockBaby/flag")
 
