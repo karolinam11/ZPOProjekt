@@ -1,0 +1,24 @@
+<mat-toolbar color="secondary">
+  <span>MaliGiganci</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="summary()">Podsumowanie</button>
+  <button mat-button (click)="logOut()">Wyloguj się</button>
+</mat-toolbar>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px" class="container">
+  <div fxFlex="30%" class="image-holder">
+    <mat-card>
+      <img mat-card-image [src]="imageUrl" alt="{{ name }}">
+      <mat-card-content>
+        <h3>{{ name }}</h3>
+        <p>Email dziecka: {{ email }}</p>
+      </mat-card-content>
+      <div *ngIf="!flagValue" class="blocked-message">BLOKADA</div>
+      <mat-card-actions>
+        <button *ngIf="flagValue" mat-flat-button color="warn" (click)="blockUser()">Zablokuj</button>
+        <button *ngIf="!flagValue" mat-flat-button color="primary" (click)="unblockUser()">Odblokuj</button>
+      </mat-card-actions>
+    </mat-card>
+    <button mat-button (click)="summary()">Zobacz podsumowanie gier {{ name }}</button>
+  </div>
+</div>
